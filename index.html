@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en" ng-app="SPAngular">
+<head>
+    <meta name="viewport" content="width=device-width,minimum-scale=0.5,maximum-scale=10.0,initial-scale=1.0">
+    <meta charset="UTF-8">
+    <title>SPAngular</title>
+
+    <link rel="shortcut icon" href="favicon.ico">
+
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+
+    <!-- @exclude -->
+    <link rel="stylesheet/less" href="styles/app.less">
+    <script src="libs/less/dist/less-1.5.0-b3.js"></script>
+    <!-- @endexclude -->
+
+    <!-- @ifdef RELEASE -->
+    <!-- @include assets/includes/release-head.html -->
+    <!-- @endif -->
+
+    <script>
+        window.onload = function() {
+            var wrapper = document.getElementById('javascriptDisabled');
+            wrapper.parentNode.removeChild(wrapper);
+        };
+    </script>
+</head>
+<body>
+    
+    <!-- Show this message in case if JS is disabled in user's browser -->
+    <div class="browser-wrapper" id="javascriptDisabled">
+        <h1>Javascript is required to run this website.</h1>
+        <h3>Please, turn on Javascript in your browser.</h3>
+    </div>
+
+    <!-- Hide all content until everything is loaded to provide better user experience --> 
+    <div class="browser-wrapper" id="pageLoading">
+        <h1>Loading...</h1>
+        <h3>It'll be legen... wait for it... dary!</h3>
+    </div>
+
+    <div ui-view=""></div>
+
+    <!--[if lte IE 8]>
+    <script src="assets/browser/browser-warning.js"></script>
+    <![endif]-->
+
+    <!-- @ifndef RELEASE -->
+    <script src="libs/angular/angular.js"></script>
+    <script src="libs/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="app/SPAngular.js"></script>
+    <!-- @endif -->
+
+    <!-- @ifdef RELEASE -->
+    <!-- @include assets/includes/release-foot.html -->
+    <!-- @endif -->
+</body>
+</html>
