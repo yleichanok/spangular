@@ -3,7 +3,8 @@
     "description": "A simple single-page application based on AngularJS.",
     "version": "0.0.1",
     "repository": {
-
+        "type": "git",
+        "url": "https://github.com/yleichanok/spangular"
     },
     "author": {
         "name": "Yauheni Leichanok",
